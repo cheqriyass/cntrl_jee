@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    <form-beans type="org.apache.struts.action.ActionFormBean">
+        <form-bean name="editeurForm" type="FormBeans.EditeurForm" />
+        <form-bean name="annonceurForm" type="FormBeans.AnnonceurForm" />
+        <form-bean name="compagneForm" type="FormBeans.CompagneForm" />
+        <form-bean name="nutriciaF" type="FormBeans.NutriciaForm" />
+    </form-beans>
+
+
+    <action-mappings>
+        <action path="/addEditeur" type="Controller.addEditeurAction" name="editeurForm"
+                scope="session" input="/View/addEditeurView.jsp" validate="true">
+            <forward name="success" path="/View/addEditeurSuccess.jsp" redirect="false" />
+        </action>
+
+        <action path="/addAnnonceur" type="Controller.addAnnonceurAction" name="annonceurForm"
+                scope="session" input="/View/addAnnonceurView.jsp" validate="true">
+            <forward name="success" path="/View/addAnnonceurSuccess.jsp" redirect="false" />
+        </action>
+
+        <action path="/addCompagne" type="Controller.addCompagneAction" name="compagneForm"
+                scope="session">
+            <forward name="success" path="/View/addCompagneSuccess.jsp" redirect="false" />
+        </action>
+
+
+        <action path="/loadForm" type="Controller.loadCompagneForm" name="compagneForm">
+            <forward name="success" path="/View/addCompagneView.jsp" redirect="false"/>
+        </action>
+
+        <action path="/step1" type="Controller.NutriciaActionStep1" name="nutriciaF"
+                scope="session" input="/View/Nutricia/NutriciaStep1.jsp" validate="true">
+
+            <forward name="step2" path="/View/Nutricia/NutriciaStep2.jsp" redirect="false" />
+        </action>
+
+        <action path="/step2" type="Controller.NutriciaActionStep2" name="nutriciaF"
+                scope="session" input="/View/Nutricia/NutriciaStep2.jsp" validate="true">
+
+            <forward name="success" path="/View/Nutricia/NutriciaSuccess.jsp" redirect="false" />
+        </action>
+
+    </action-mappings>
+
+    <message-resources parameter="messages"></message-resources>
+</struts-config>

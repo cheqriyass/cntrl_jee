@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="cntrl_jee:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/cntrl_jee_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="cntrl_jee/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cntrl_jee" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JPA 2.0-2.0" />
+          <element id="library" level="project" name="struts-1.3.x" />
+          <element id="library" level="application" name="mysql-connector-java-5.1.6" />
+          <element id="library" level="application" name="eclipselink-2.2.0" />
+          <element id="library" level="application" name="common-lang3" />
+          <element id="library" level="project" name="struts-struts" />
+          <element id="library" level="application" name="mail-1.5.0-b01" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
